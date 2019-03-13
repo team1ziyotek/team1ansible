@@ -8,3 +8,21 @@
    yum:
      name: httpd
      state: latest
+template:
+     src: /ansible/templates/httpd.conf.j2
+     dest: /etc/httpd/conf/httpd.conf
+   notify:
+   - restart httpd
+ - name: ensure apache service is running
+   service:
+     name: httpd
+     state: started
+ handlers:
+   - name: restart apache
+     service:
+       name: httpd
+       stated: restarted
+ - name: Web content
+   template:
+     src: /ansible/templates/index.html.j2
+     dest: /var/www/html/index.html

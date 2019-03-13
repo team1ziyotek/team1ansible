@@ -1,0 +1,21 @@
+---
+- hosts: databaseservers
+  remote_user: ansible
+  become: yes
+
+  tasks:
+  - name: install latest mariadb
+    yum:
+      name: mariadb
+      name: mariadb-server
+      state: latest
+
+  - name: ensure mariadb is running
+    service:
+      name: mariadb
+      state: started
+  handlers:
+    - name: restart mariadb
+      service:
+        name: mariadb
+        state: restarted

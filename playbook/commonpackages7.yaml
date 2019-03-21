@@ -1,0 +1,17 @@
+---
+- name: install initial packages on all boxes
+  hosts: loadbalancerservers2
+  remote_user: ansible
+  become: yes
+
+  tasks:
+  - name: install all initial packages
+    yum:
+      name:
+      - man-db
+      - man-pages
+      - mlocate
+      - bind-utils
+      - sysstat
+      state: latest
+

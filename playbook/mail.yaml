@@ -1,0 +1,90 @@
+---
+- hosts: webservers6
+  remote_user: ansible
+  become: yes
+
+  tasks:
+  - name: remove the sendmail package
+    yum:
+      name: sendmail
+      state: absent
+
+  - name: install epel-release
+    yum:
+      name: epel-release
+      state: present
+
+  - name: install the latest version of postfix
+    yum:
+      name: postfix
+      state: latest
+
+  - name: install the latest version of telnet
+    yum:
+      name: telnet
+      state: latest
+
+  - name: install the latest mailx
+    yum:
+      name: mailx
+      state: latest
+
+  - name: install the latest version of dovecot
+    yum:
+      name: dovecot
+      state: latest
+
+  - name: install the latest squirrelmail
+    yum:
+      name: squirrelmail
+      state: latest
+
+  - name: install the latest httpd
+    yum:
+      name: httpd
+      state: latest
+
+  - name: write to postfix config file
+    template:
+      src: /ansible/templates/postfix.conf.j2
+      dest: /etc/postfix/main.cf
+
+  - name: write to dovecot config file
+    template:
+      src: /ansible/templates/dovecot.conf.j2
+      dest: /etc/dovecot/dovecot.conf
+
+  - name: write to 10-mail.conf file
+    template:
+      src: /ansible/templates/dovecot10-mail.conf.j2
+      dest: /etc/dovecot/conf.d/10-mail.conf
+
+  - name: write to 10-auth.conf file
+    template:
+      src: /ansible/templates/dovecot10-auth.conf.j2
+      dest: /etc/dovecot/conf.d/10-auth.conf
+
+  - name: write to 10-master.conf file
+    template:
+      src: /ansible/templates/dovecot10-master.conf.j2
+      dest: /etc/dovecot/conf.d/10-master.conf
+
+  - name: write to httpd configfile
+    template:
+      src: /ansible/templates/mailhttpd.conf.j2
+      dest: /etc/httpd/conf/httpd.conf
+
+    notify:
+    - restart httpd
+
+  - name: ensure apache server is running
+    service:
+      name: httpd
+      state: started
+
+  handlers:
+  - name: restart httpd
+    service:
+      name: httpd
+      state: restarted
+

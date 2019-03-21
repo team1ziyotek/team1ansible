@@ -1,0 +1,17 @@
+---
+- hosts: mailserver
+  remote_user: ansible
+  become: yes
+
+  tasks:
+    - name: Ensure autofs is installed.
+      yum: name=autofs state=installed update_cache=yes 
+
+    - name: Create mountable dir
+      file: path=/nfs_autofs state=directory mode=777 owner=root group=root
+    
+    - name: mount /autofsshare to /nfs_autofs 
+      mount: fstype=nfs name=/nfs_autofs src='prdx-nfs11:/autofsshare' state=mounted
+
+
+

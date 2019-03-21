@@ -83,7 +83,7 @@ Group apache
 # e-mailed.  This address appears on some server-generated pages, such
 # as error documents.  e.g. admin@your-domain.com
 #
-ServerAdmin root@localhost
+ServerAdmin root@ziyotek1.local
 
 #
 # ServerName gives the name and port that the server uses to identify itself.
@@ -92,7 +92,7 @@ ServerAdmin root@localhost
 #
 # If your host doesn't have a registered DNS name, enter its IP address here.
 #
-#ServerName www.example.com:80
+ServerName prdx-webserver11.ziyotek1.local:80
 
 #
 # Deny access to the entirety of your server's filesystem. You must
@@ -148,7 +148,7 @@ DocumentRoot "/var/www/html"
     # It can be "All", "None", or any combination of the keywords:
     #   Options FileInfo AuthConfig Limit
     #
-    AllowOverride None
+    AllowOverride All
 
     #
     # Controls who can get stuff from this server.
@@ -161,7 +161,7 @@ DocumentRoot "/var/www/html"
 # is requested.
 #
 <IfModule dir_module>
-    DirectoryIndex index.html
+    DirectoryIndex index211.html
 </IfModule>
 
 #

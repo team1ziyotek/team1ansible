@@ -1,0 +1,23 @@
+---
+- hosts: nagiosserver
+  remote_user: ansible
+  become: yes
+
+  tasks:
+  - name: write nagios infra config file
+    template:
+      src: /ansible/templates/nagiosmasterinfra.conf.j2
+      dest: /usr/local/nagios/etc/servers/infra.cfg
+
+    notify:
+    - restart nagios
+  - name: ensure nagios service is running
+    service:
+      name: nagios
+      state: started
+  handlers:
+    - name: restart nagios
+      service:
+        name: nagios
+        state: restarted
+

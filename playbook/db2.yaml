@@ -1,5 +1,5 @@
 ---
-- hosts: databaseservers
+- hosts: databaseservers2
   remote_user: ansible
   become: yes
 
@@ -9,14 +9,14 @@
         pkg:
           - epel-release
           - httpd
-          - mysql
-          - mysql-server
+          - mariadb
+          - mariadb-server
           - php
           - php-mysql
         state: latest
         update_cache: yes
-    
-    - name: install phpmyadmin
+   
+    - name: install phpMyAdmin
       yum:
         name: phpmyadmin
         state: latest
@@ -27,9 +27,9 @@
         state: started
         enabled: yes
 
-    - name: start mysql service
+    - name: start mariadb service
       service:
-        name: mysqld
+        name: mariadb
         state: started
         enabled: yes
 
@@ -50,13 +50,13 @@
         src: /ansible/templates/test.php.j2
         dest: /var/www/html/test.php
 
-
     - name: deploy phpMyAdmin.conf
       become: yes
       become_user: root
       copy:
-        src: /ansible/templates/phpMyAdmin.conf.j2
+        src: /ansible/templates/phpMyAdmin2.conf.j2
         dest: /etc/httpd/conf.d/phpMyAdmin.conf
+
 
     - name: restart httpd service
       service:

@@ -1,0 +1,11 @@
+---
+- hosts:  nameservers:ntpservers:pxedhcpserver:nfsautofsserver:sambaserver:mailserver:databaseservers:databaseservers2:webserver11:webserver21:webserver31:webserver111:webserver211:webserver311:loadbalancerservers:loadbalancerservers2:ldapserver
+  remote_user: ansible
+  become: yes
+
+  tasks:
+  - name: write nrpe config file
+    template:
+      src: /ansible/templates/nagiosclients.conf.j2
+      dest: /etc/nagios/nrpe.cfg
+

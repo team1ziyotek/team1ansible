@@ -1,0 +1,39 @@
+
+---
+- hosts: nfsautofsserver
+  remote_user: ansible
+  become: yes
+
+  tasks:
+    - name: Create mountable dir
+      file: path=/share state=directory mode=777 owner=root group=root
+      
+    - name: Ensure NFS utilities are installed.
+      yum: 
+        pkg:
+          - nfs*
+
+        state: latest
+        update_cache: yes
+  
+
+    - name: rpcbind start service
+      service: 
+        name: rpcbind 
+        state: started
+        enabled: yes
+
+    - name: nfs start service
+      service:
+        name: nfs
+        state: started
+        enabled: yes 
+
+    - name: copy /etc/exports
+      template: src=exports.j2 dest=/etc/exports owner=root group=root
+   
+       
+
+    - name: restart nfs server
+      service: name=nfs state=restarted
+

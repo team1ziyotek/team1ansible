@@ -1,0 +1,16 @@
+---
+- host: all
+  remote_user: ansible
+  become: yes
+
+  tasks:
+  - name: install samba
+    yum:
+      name: samba*
+      state: latest
+
+  - name: Writing to /etc/samba/smb.conf
+    template:
+      src: /ansible/templates/sambamaster.conf.j2
+      dest: /etc/samba/smb.conf
+

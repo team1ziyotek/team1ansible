@@ -1,0 +1,14 @@
+---
+- hosts: mailserver
+  remote_user: ansible
+  become: yes
+
+  tasks:
+    - name: Ensure nfs* is installed.
+      yum: name=nfs* state=installed update_cache=yes 
+
+    - name: Create mountable dir
+      file: path=/clientshare state=directory mode=777 owner=root group=root
+    
+    - name: mount /share to /clientshare
+      mount: fstype=nfs name=/clientshare src='prdx-nfs11:/share' state=mounted

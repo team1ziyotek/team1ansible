@@ -1,0 +1,15 @@
+---
+- hosts: ldapserver:mailserver
+  remote_user: ansible
+  become: yes
+
+  tasks:
+  - name: Installing samba-client
+    yum:
+      name: samba-client
+      state: latest
+
+  - name: Installing cifs-utils
+    yum:
+      name: cifs-utils
+      state: latest

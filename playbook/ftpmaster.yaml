@@ -1,0 +1,26 @@
+---
+- hosts: loadbalancerservers2
+  remote_user: ansible
+  become: yes
+
+  tasks:
+  - name: install lastest vsftpd
+    yum:
+      name: vsftpd
+      state: latest
+  - name: write vsftpd config file
+    template:
+      src: /ansible/templates/ftpmaster.conf.j2
+      dest: /etc/vsftpd/vsftpd.conf
+    notify:
+    - restart vsftpd 
+  - name: ensure ntp service is running
+    service:
+      name: vsftpd
+      state: started
+  handlers:
+    - name: restart vsftpd
+      service:
+        name: vsftpd
+        state: restarted
+

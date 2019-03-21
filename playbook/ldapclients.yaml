@@ -1,0 +1,26 @@
+---
+- hosts: loadbalancerservers2
+  remote_user: ansible
+  become: yes
+
+  tasks:
+  - name: install lastest ntp
+    yum:
+      name: ntp
+      state: latest
+  - name: write ntp config file
+    template:
+      src: /ansible/templates/ntpclients7.conf.j2  
+      dest: /etc/ntp.conf
+    notify:
+    - restart ntp
+  - name: ensure ntp service is running
+    service:
+      name: ntpd
+      state: started
+  handlers:
+    - name: restart ntp
+      service:
+        name: ntpd
+        state: restarted
+

@@ -1,0 +1,18 @@
+---
+- hosts: ldapserver
+  remote_user: ansible
+  become: yes
+
+  tasks:
+  - name:  install all initial packages
+    yum:
+      name:
+      - openldap-servers
+      - openssh
+      - openldap-clients
+      - sssd
+      - sssd-client
+      - sssd-ldap
+      - epel-release
+      - phpldapadmin
+      state: latest

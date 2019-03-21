@@ -1,0 +1,38 @@
+
+---
+- hosts: prdx-ftp11
+  remote_user: ansible
+  become: yes
+
+  tasks:
+      
+    - name: Ensure vsftpd is installed.
+      yum: 
+        pkg:
+          - vsftpd
+        state: latest
+        update_cache: yes
+
+
+    - name: Create a login user
+      user:
+        name: ftpuser
+        password: $1$Ox4tnzhc$0vELXOaBjeXFd35tBfLSx/
+        state: present 
+
+    - name: copy /etc/vsftpd/vsftpd.conf
+      template: src=vsftpd.j2 dest=/etc/vsftpd/vsftpd.conf
+
+  
+    - name: vsftpd start service
+      service:
+        name: vsftpd
+        state: started
+        enabled: yes 
+
+   
+   
+       
+
+    
+

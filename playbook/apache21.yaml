@@ -1,0 +1,34 @@
+---
+- hosts: webserver21
+  remote_user: ansible
+  become: yes
+
+  tasks:
+  - name: install latest apache
+    yum:
+      name: httpd
+      state: latest
+
+  - name: write apache config file
+    template:
+      src: /ansible/templates/httpd21.conf.j2
+      dest: /etc/httpd/conf/httpd.conf
+    notify:
+    - restart httpd
+
+  - name: web content
+    template:
+      src: /ansible/templates/webserver21index2.html.j2
+      dest: /var/www/html/index21.html
+
+  - name: ensure apache server is running
+    service:
+      name: httpd
+      state: started
+
+  handlers:
+  - name: restart httpd
+    service:
+      name: httpd
+      state: restarted
+

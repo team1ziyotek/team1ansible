@@ -1,0 +1,16 @@
+---
+- name: install initial packages on all boxes
+  hosts: databaseservers
+  remote_user: ansible
+  become: yes
+
+  tasks:
+  - name: install all initial packages
+    yum:
+      name:
+      - mlocate
+      - man-pages
+      - bind-utils
+      - sysstat
+      state: latest
+

@@ -1,0 +1,64 @@
+---
+- hosts: nagiosserver
+  remote_user: ansible
+  become: yes
+
+  tasks:
+  - name: Installing gcc
+    yum: 
+      name: gcc 
+      state: latest
+
+  - name: Installing glibc 
+    yum: 
+      name: glibc
+      state: latest
+
+  - name: Installing glibc-common 
+    yum:
+      name: glibc-common
+      state: latest
+
+  - name: Installing gd 
+    yum:
+      name: gd
+      state: latest
+
+  - name: Installing gd-devel 
+    yum:
+      name: gd-devel
+      state: latest
+ 
+  - name: Installing make 
+    yum:
+      name: make
+      state: latest  
+
+      
+  - name: Installing net-snmp 
+    yum:
+      name: net-snmp
+      state: latest
+
+  - name: Installing openssl-devel 
+    yum:
+      name: openssl-devel
+      state: latest  
+
+  - name: Installing httpd 
+    yum:
+      name: httpd
+      state: latest
+
+
+  - name: Installing php
+    yum:
+      name: php
+      state: latest
+
+
+  - name: Installing unzip
+    yum:
+      name: unzip 
+      state: latest
+          

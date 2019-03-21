@@ -1,0 +1,32 @@
+---
+- hosts: nameservers:ntpservers:pxedhcpserver:nfsautofsserver:sambaserver:mailserver:databaseservers:databaseservers2:webserver11:webserver21:webserver31:webserver111:webserver211:webserver311:loadbalancerservers:loadbalancerservers2:ldapserver
+  remote_user: ansible
+  become: yes
+
+  tasks:
+  - name: Enable epel-release
+    yum: 
+     name: epel-release 
+     state: present
+
+  - name: Install nrpe 
+    yum: 
+      name: nrpe
+      state: latest
+
+  - name: Installing nagios-plugins-all 
+    yum:
+      name: nagios-plugins-all 
+      state: latest
+
+  - name: Add IP
+    replace:
+      path: /etc/nagios/nrpe.cfg
+      regexp: 'allowed_hosts=127.0.0.1,::1'
+      replace: 'allowed_hosts=127.0.0.1,192.168.40.86'
+
+  - name: enable and starting nrpe
+    service: 
+      name: nrpe
+      enabled: true
+

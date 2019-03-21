@@ -1,0 +1,900 @@
+#LOCALHOST.CFG - SAMPLE OBJECT CONFIG FILE FOR MONITORING THIS MACHINE
+#
+#
+# NOTE: This config file is intended to serve as an *extremely* simple 
+#       example of how you can create configuration entries to monitor
+#       the local (Linux) machine.
+#
+###############################################################################
+
+
+
+
+###############################################################################
+###############################################################################
+#
+# HOST DEFINITION
+#
+###############################################################################
+###############################################################################
+
+# Define a host for the local machine
+
+define host{
+       use                     linux-server            ; Name of host template to use
+							; This host definition will inherit all variables that are defined
+							; in (or inherited by) the linux-server host template definition.
+        host_name               prdx-ftp11.ziyotek1.local
+        alias                   ftp11
+        address                 192.168.40.79
+
+}
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-mail11.ziyotek1.local
+        alias                   mail11
+        address                 192.168.40.84
+
+
+
+ }
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-samba11.ziyotek1.local
+        alias                   samba11
+        address                 192.168.40.87
+
+
+
+ }
+
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-db11.ziyotek1.local
+        alias                   db11
+        address                 192.168.40.82
+
+
+
+ }
+
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-db111.ziyotek1.local
+        alias                   db111
+        address                 192.168.40.77
+
+
+
+ }
+
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-ntp11.ziyotek1.local
+        alias                   ntp11
+        address                 192.168.40.53
+
+
+
+ }
+
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-ntp21.ziyotek1.local
+        alias                   ntp21
+        address                 192.168.40.54
+
+
+
+ }
+
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-nsmaster11.ziyotek1.local
+        alias                   nsmaster11
+        address                 192.168.40.50
+
+
+
+ }
+
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-nsworker11.ziyotek1.local
+        alias                   nsworker11
+        address                 192.168.40.51
+
+
+
+ }
+
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-nsworker21.ziyotek1.local
+        alias                   nsworker21
+        address                 192.168.40.42
+
+
+
+ }
+
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-pxe11.ziyotek1.local
+        alias                   pxe11
+        address                 192.168.40.55
+
+
+
+ }
+
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-nfs11.ziyotek1.local
+        alias                   nfs11
+        address                 192.168.40.75
+
+
+
+ }
+
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-haproxy111.ziyotek1.local
+        alias                   haproxy111
+        address                 192.168.40.81
+
+
+
+ }
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-haproxy11.ziyotek1.local
+        alias                   haproxy11
+        address                 192.168.40.80
+
+
+
+ }
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-webserver11.ziyotek1.local
+        alias                   webserver
+        address                 192.168.40.70
+
+
+
+ }
+
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-webserver21.ziyotek1.local
+        alias                   webserver21
+        address                 192.168.40.71
+
+
+
+ }
+
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-webserver31.ziyotek1.local
+        alias                   webserver31
+        address                 192.168.40.72
+
+
+
+ }
+
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-webserver111.ziyotek1.local
+        alias                   webserver111
+        address                 192.168.40.88
+
+
+
+ }
+
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-webserver211.ziyotek1.local
+        alias                   webserver211
+        address                 192.168.40.90
+
+
+
+ }
+
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-webserver311.ziyotek1.local
+        alias                   webserver311
+        address                 192.168.40.89
+
+
+
+ }
+
+define host{
+        use                     linux-server            ; Name of host template to use
+                                                        ; This host definition will inherit all variables that are defined
+                                                        ; in (or inherited by) the linux-server host template definition.
+
+
+        host_name               prdx-ldap11.ziyotek1.local
+        alias                   ldap11
+        address                 192.168.40.83
+
+
+
+ }
+
+ 
+
+
+ 
+
+
+
+
+
+###############################################################################
+###############################################################################
+#
+# HOST GROUP DEFINITION
+#
+###############################################################################
+###############################################################################
+
+# Define an optional hostgroup for Linux machines
+
+define hostgroup{
+        hostgroup_name  linux Machine ; The name of the hostgroup
+        alias           Linux Servers ; Long name of the group
+        members         localhost, prdx-ftp11.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+
+define hostgroup{
+        hostgroup_name  linux Machines; The name of the hostgroup
+        alias           Linux Servers2 ; Long name of the group
+        members         localhost, prdx-mail11.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines3; The name of the hostgroup
+        alias           Linux Servers3 ; Long name of the group
+        members         localhost, prdx-nsmaster11.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines4; The name of the hostgroup
+        alias           Linux Servers4 ; Long name of the group
+        members         localhost, prdx-nsworker11.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines5; The name of the hostgroup
+        alias           Linux Servers5 ; Long name of the group
+        members         localhost, prdx-nsworker21.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines6; The name of the hostgroup
+        alias           Linux Servers6 ; Long name of the group
+        members         localhost, prdx-ntp11.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines7; The name of the hostgroup
+        alias           Linux Servers7 ; Long name of the group
+        members         localhost, prdx-ntp21.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines8; The name of the hostgroup
+        alias           Linux Servers8 ; Long name of the group
+        members         localhost, prdx-pxe11.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines9; The name of the hostgroup
+        alias           Linux Servers9 ; Long name of the group
+        members         localhost, prdx-nfs11.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines10; The name of the hostgroup
+        alias           Linux Servers10 ; Long name of the group
+        members         localhost, prdx-samba11.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines11; The name of the hostgroup
+        alias           Linux Servers11 ; Long name of the group
+        members         localhost, prdx-db11.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines12; The name of the hostgroup
+        alias           Linux Servers12 ; Long name of the group
+        members         localhost, prdx-db111.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines13; The name of the hostgroup
+        alias           Linux Servers13 ; Long name of the group
+        members         localhost, prdx-webserver11.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines14; The name of the hostgroup
+        alias           Linux Servers14 ; Long name of the group
+        members         localhost, prdx-webserver21.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines15; The name of the hostgroup
+        alias           Linux Servers15; Long name of the group
+        members         localhost, prdx-webserver31.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines16; The name of the hostgroup
+        alias           Linux Servers16 ; Long name of the group
+        members         localhost, prdx-webserver111.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines17; The name of the hostgroup
+        alias           Linux Servers17 ; Long name of the group
+        members         localhost, prdx-webserver211.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines18; The name of the hostgroup
+        alias           Linux Servers18 ; Long name of the group
+        members         localhost, prdx-webserver311.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines19; The name of the hostgroup
+        alias           Linux Servers19 ; Long name of the group
+        members         localhost, prdx-haproxy11.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines20; The name of the hostgroup
+        alias           Linux Servers20 ; Long name of the group
+        members         localhost, prdx-haproxy111.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+define hostgroup{
+        hostgroup_name  linux Machines21; The name of the hostgroup
+        alias           Linux Servers21 ; Long name of the group
+        members         localhost, prdx-ldap11.ziyotek1.local
+
+
+
+     ; Comma separated list of hosts that belong to this group
+        }
+
+
+
+
+
+###############################################################################
+###############################################################################
+#
+# SERVICE DEFINITIONS
+#
+###############################################################################
+###############################################################################
+
+
+# Define a service to "ping" the local machine
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-ftp11.ziyotek1.local
+
+        service_description             PING
+	check_command			check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-mail11.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-nfs11.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-samba11.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-db11.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-db111.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-webserver11.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-webserver21.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-webserver31.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-webserver111.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-webserver211.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-webserver311.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-nsmaster11.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-nsworker11.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-nsworker21.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-ntp11.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-ntp21.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-pxe11.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-haproxy11.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-haproxy111.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       prdx-ldap11.ziyotek1.local
+
+        service_description             PING
+        check_command                   check_ping!100.0,20%!500.0,60%
+        }
+
+
+
+
+
+
+# Define a service to check the disk space of the root partition
+# on the local machine.  Warning if < 20% free, critical if
+# < 10% free space on partition.
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       localhost
+        service_description             Root Partition
+	check_command			check_local_disk!20%!10%!/
+        }
+
+
+
+# Define a service to check the number of currently logged in
+# users on the local machine.  Warning if > 20 users, critical
+# if > 50 users.
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       localhost
+        service_description             Current Users
+	check_command			check_local_users!20!50
+        }
+
+
+# Define a service to check the number of currently running procs
+# on the local machine.  Warning if > 250 processes, critical if
+# > 400 users.
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       localhost
+        service_description             Total Processes
+	check_command			check_local_procs!250!400!RSZDT
+        }
+
+
+
+# Define a service to check the load on the local machine. 
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       localhost
+        service_description             Current Load
+	check_command			check_local_load!5.0,4.0,3.0!10.0,6.0,4.0
+        }
+
+
+
+# Define a service to check the swap usage the local machine. 
+# Critical if less than 10% of swap is free, warning if less than 20% is free
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       localhost
+        service_description             Swap Usage
+	check_command			check_local_swap!20!10
+        }
+
+
+
+# Define a service to check SSH on the local machine.
+# Disable notifications for this service by default, as not all users may have SSH enabled.
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       localhost
+        service_description             SSH
+	check_command			check_ssh
+	notifications_enabled		0
+        }
+
+
+
+# Define a service to check HTTP on the local machine.
+# Disable notifications for this service by default, as not all users may have HTTP enabled.
+
+define service{
+        use                             local-service         ; Name of service template to use
+        host_name                       localhost
+        service_description             HTTP
+	check_command			check_http
+	notifications_enabled		0
+        }
+
+
+

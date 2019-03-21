@@ -1,0 +1,10 @@
+---
+- hosts: all
+  remote_user: ansible
+  become: yes
+
+  tasks:
+    - name: Ensure ftp is installed.
+      yum: name=ftp state=installed update_cache=yes 
+
+    

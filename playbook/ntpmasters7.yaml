@@ -1,0 +1,25 @@
+##This is a playbook for installing ntp on ntp master servers.
+## Playbook uses "yum, service,  modules.
+## This playbook was created by Team 1 (Ziyotek Fall 2018 Class on (03/14/2019))
+
+
+- hosts: ntpservers
+  remote_user: ansible
+  become: yes
+
+  tasks:
+  - name: install lastest ntp
+    yum:
+      name: ntp
+      state: latest
+  - name: ensure ntp service is running
+    service:
+      name: ntpd
+      state: started
+  handlers:
+    #this taskis to make sure ntp service is started
+    - name: restart ntp
+      service:
+        name: ntpd
+        state: restarted
+        enabled: yes

@@ -1,5 +1,9 @@
 ---
+<<<<<<< HEAD:playbook/apache11.yaml
 - hosts: webserver11
+=======
+- hosts: webservers
+>>>>>>> 12c1fc26fb4f22462414951346b973bff7a4e224:playbook/apache.yaml
   remote_user: ansible
   become: yes
 
